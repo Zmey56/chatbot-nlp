@@ -3,10 +3,10 @@
 A chatbot with natural language processing on Go.
 
 ## Features:
-✅ REST API
-✅ Interaction with NLP API (Openal / Hugging Face)
-✅ Clean architecture
-✅ Docker-ready
+- REST API
+- Interaction with NLP API (Openal / Hugging Face)
+- Clean architecture
+- Docker-ready
 
 ## Server startup:
 ``bash
