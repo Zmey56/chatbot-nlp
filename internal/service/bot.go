@@ -2,6 +2,7 @@ package service
 
 import (
 	"errors"
+	"log"
 
 	"github.com/Zmey56/chatbot-nlp/internal/client"
 )
@@ -24,5 +25,14 @@ func (b *botService) GetResponse(input string) (string, error) {
 	if input == "" {
 		return "", errors.New("empty input message")
 	}
-	return b.apiClient.SendRequest(input)
+
+	response, err := b.apiClient.SendRequest(input)
+	if err != nil {
+		log.Println("Error getting response from NLP API:", err)
+		return "", err
+	}
+
+	log.Println("Received response from NLP API:", response)
+
+	return response, nil
 }
